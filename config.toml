@@ -1,4 +1,4 @@
-baseurl = "http://sexysexypenguins.com"
+baseurl = "http://sexysexypenguins.com/"
 title = "Sexy Sexy Penguins"
 
 # Copyright
@@ -14,7 +14,7 @@ metaDataFormat = "yaml"
 # Theme to use (located in /themes/THEMENAME/)
 theme = "hyde"
 
-#ignoreFiles = [ "\..*\.sw\.*" ]
+ignoreFiles = [ "^.+?.sw.?$" ]
 
 # Pagination
 paginate = 10
