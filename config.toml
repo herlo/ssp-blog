@@ -1,0 +1,64 @@
+baseurl = "http://localhost:1313"
+title = "Sexy Sexy Penguins"
+
+# Copyright
+copyright = "(c) 2015 Clint Savage."
+
+# Language
+languageCode = "en-EN"
+
+# Metadata format
+# "yaml", "toml", "json"
+metaDataFormat = "yaml"
+
+# Theme to use (located in /themes/THEMENAME/)
+theme = "hyde"
+
+#ignoreFiles = [ "\..*\.sw\.*" ]
+
+# Pagination
+paginate = 10
+paginatePath = "page"
+
+# Enable Disqus integration
+disqusShortname = "sexysexypenguins"
+
+[permalinks]
+    post = "/:year/:filename/"
+    code = "/:slug/"
+
+[author]
+    name = "herlo"
+    homepage = "http://sexysexypenguins.com"
+    email = "herlo1@gmail.com"
+
+[[menu.main]]
+    Name  = "All Posts"
+    URL   = "/posts"
+
+[taxonomies]
+    tag = "tags"
+    topic = "topics"
+
+[params]
+    description = "A lazy admin is a good admin!"
+
+    # Sidebar social links.
+    contact = "mailto:herlo1@gmail.com"
+    github = "https://github.com/herlo"
+    twitter = "https://twitter.com/herlo"
+    keybase = "https://keybase.io/herlo"
+
+    # Sidebar RSS link: will only show up if there is a RSS feed
+    # associated with the current page
+    layoutReverse = true
+    enableRSS = true
+
+    # Google Analytics API key.
+    ga_api_key = "Your Google Analytics tracking id"
+
+    disqusShortname = "sexysexypenguins"
+    author = "Clint Savage"
+    bio = "Hi, my name is Clint Savage. People online call me herlo."
+
+    image = "/images/sexysexypenguins.jpg"

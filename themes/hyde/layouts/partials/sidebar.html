@@ -1,0 +1,41 @@
+<div class="sidebar">
+  <div class="container">
+    <div class="sidebar-about">
+      <img src="/images/sexysexypenguins-420.png" />
+      <a href="{{ .Site.BaseURL }}">
+      <h1>{{ .Site.Title }}</h1></a>
+      <p class="lead">
+      {{ with .Site.Params.description }} {{.}} {{ else }}An elegant open source and mobile first theme for <a href="http://hugo.spf13.com">hugo</a> made by <a href="http://twitter.com/mdo">@mdo</a>. Originally made for Jekyll.{{end}}
+      </p>
+    </div>
+
+    <ul class="sidebar-nav">
+      {{ range .Site.Menus.main }}
+        <li><a href="{{.URL}}"> {{ .Name }} </a></li>
+      {{end}}
+    </ul>
+
+    <ul class="sidebar-nav">
+      {{ range first 6 (.Site.Pages.GroupByDate "2006") }}
+      {{ $url := (index .Pages 0).Node.Date.Format "2006" | urlize }}
+      <li><a href="/posts/#{{ $url }}">{{ .Key }}</a> - ({{ len .Pages }})</li>
+        {{ end }}
+    </ul>
+
+    {{ if .Site.Params.enableRSS }}
+    <a href="{{ .Site.RSSLink }}" type="application/rss+xml"><i class="fa fa-rss-square"></i></a>&nbsp;&nbsp;
+    {{ end }}
+
+    {{ with .Site.Params.twitter }}
+    <a href="{{ . }}"><i class="fa fa-twitter-square"></i></a>&nbsp;&nbsp;
+    {{ end }}
+    {{ with .Site.Params.github }}
+    <a href="{{ . }}"><i class="fa fa-github-square"></i></a>&nbsp;&nbsp;
+    {{ end }}
+    {{ with .Site.Params.keybase }}
+    <a href="{{ . }}"><i class="fa fa-key"></i></a>
+    {{ end }}
+
+    <p>{{ with .Site.Params.copyright }}{{.}}{{ else }}&copy; {{.Now.Format "2006"}}. All rights reserved. {{end}}</p>
+  </div>
+</div>

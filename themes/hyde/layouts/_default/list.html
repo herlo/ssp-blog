@@ -1,0 +1,27 @@
+{{ partial "head.html" . }}
+<body class="{{ .Site.Params.themeColor }} {{if .Site.Params.layoutReverse}}layout-reverse{{end}}">
+
+{{ partial "sidebar.html" . }}
+
+  <div class="content container">
+    <ul class="posts">
+        {{ range .Data.Pages.GroupByDate "2006" }}
+        <h2 id="{{ .Key }}">{{ .Key }}</h2>
+          <ul id="list">
+          {{ range .Pages }}
+            <li>
+              <span style="line-height: 1.0">
+              {{if .Draft}}[draft] {{end}}<a href="{{ .Permalink }}">{{ .Title }}</a>
+              <div class="post-item">
+              	<span style="font-size: .75em">{{ .Date.Format "Mon, Jan 2, 2006" }}</span>
+              </div>
+              </span>
+            </li>
+          {{ end }}
+          </ul>
+        {{ end }}
+    </ul>
+  </div>
+</body>
+</html>
+
