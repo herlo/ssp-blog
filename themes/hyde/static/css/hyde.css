@@ -166,6 +166,68 @@ a.sidebar-nav-item:focus {
   }
 }
 
+/*
+ * Admonitions / Notes / Etc.
+ *
+ *
+ */
+
+
+div.danger p.admonition-title:before,
+div.error p.admonition-title:before,
+div.warning p.admonition-title:before,
+div.caution p.admonition-title:before,
+div.attention p.admonition-title:before,
+div.important p.admonition-title:before,
+div.note p.admonition-title:before,
+div.hint p.admonition-title:before,
+div.tip p.admonition-title:before
+{
+  display: inline-block;
+  font-family: FontAwesome;
+  font-style: normal;
+  font-weight: normal;
+  line-height: 1.0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+div.note
+{
+  background-color: #d3d3d3;
+}
+
+
+div.danger p.last:before,
+div.error p.last:before {
+  content: "\f06a\00a0 ";
+  font-weight: bold;
+}
+div.warning p.last:before,
+div.caution p.last:before,
+div.attention p.last:before {
+  content: "\f071\00a0";
+  font-weight: bold;
+}
+div.important p.last:before,
+div.note p.last:before {
+  content: "\f05a\00a0";
+  font-weight: bold;
+}
+div.hint p.admonition-title:before,
+div.tip p.admonition-title:before {
+  content: "\f0eb\00a0";
+  font-weight: bold;
+}
+
+p.first {
+  display: none;
+}
+
+p.last {
+  font-size: 80%;
+  font-family: FontAwesome;
+}
 
 
 /*

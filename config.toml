@@ -38,7 +38,7 @@ disqusShortname = "sexysexypenguins"
 
 [taxonomies]
     tag = "tags"
-    topic = "topics"
+    series = "series"
 
 [params]
     description = "A lazy admin is a good admin!"

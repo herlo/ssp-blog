@@ -9,6 +9,21 @@
             {{ .Content }}
         </div>
 
+{{ if .Params.series }}
+    {{ $name := index .Params.series 0 }}
+    <p><a href="" id="series"></a>This is a post in the <b>{{$name}}</b> series.<br/>
+    Posts in this series:</p>
+
+    {{ $name := $name | urlize }}
+    {{ $series := index .Site.Taxonomies.series $name }}
+    <ul class="series">
+    {{ range $series.Pages }}
+        <li>{{.Date.Format "2006-01-02"}} -
+        <a href="{{.Permalink}}">{{.LinkTitle}}</a></li>
+    {{end}}
+    </ul>
+{{end}}
+
         {{ if and (isset .Site.Params "disqusShortname") (ne .Site.Params.disqusShortname "") }}
           <h2>Comments</h2>
           {{ partial "disqus" . }}
