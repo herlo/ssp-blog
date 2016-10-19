@@ -1,5 +1,5 @@
 +++
-date = "2016-09-28T10:56:43-06:00"
+date = "2016-10-19T10:56:43-06:00"
 draft = false
 title = "Introducing Linch-Pin: Hybrid cloud provisioning using Ansible"
 series = ["Linch-Pin"]
