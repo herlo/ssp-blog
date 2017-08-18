@@ -32,16 +32,11 @@ a new post.
 2. Test on local site using 'hugo server --baseURL http://localhost:1313'
 3. Once article is publishable, commit to local repository
 4. Upload any media collateral larger than 50MB
-5. Push updates to staging repository 'git push stage master'
-  * The git post-receive hook on the staging server will generate a new
-    site with the updated values and display them under the staging host
-  * An evaluation of the post on the staging site will be done to verify
-    all works well
-6. Push updates to live and origin remotes will then occur
-  * git push all master
-  * git push live master #live remote; git push origin master #github remote
-7. The same post-receive hook will run on the live server and generate
-   the site with the new post included
+5. Push updates to live repository `git push stage master`
+  * The git post-receive hook on the live server will generate a new
+    site with the updated values and display them under the live host
+6. Once the site is updated on live, push to origin `git push origin master`.
+  * This saves it here on github.
 
 The configurations for the post-receive hook can be found in the
 [ssp-packer-templates](https://github.com/herlo/ssp-packer-templates)
